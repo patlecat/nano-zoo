@@ -2,6 +2,7 @@
 
 Diese Dokumentation beschreibt den dokumentenbasierten Skill-Workflow im Projekt.
 Ziel ist ein nachvollziehbarer Ablauf von Produktidee -> PRD -> Review -> Stories -> Review mit klaren Handoffs.
+Ein kindgerechtes Glossar mit Erklaerungen zu wichtigen Fachbegriffen findest du in [docs/glossar.md](glossar.md).
 
 ## Grundprinzip
 - Jeder Skill erzeugt ein Markdown-Artefakt mit Frontmatter (`artifact_type`, `Status`, `source_inputs`, `generated_by`, `sprache`).
