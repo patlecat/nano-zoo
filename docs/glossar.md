@@ -1,7 +1,6 @@
-# Glossar: SDLC-Begriffe fuer Kids
+# Glossar: Skill-Begriffe fuer Kids
 
-Dieses Glossar erklaert schwierige Begriffe aus den Skill-Dateien fuer den professionellen SDLC-Workflow in einfacher Sprache.
-SDLC bedeutet: der ganze Weg von einer Idee bis zu getesteter Software.
+Dieses Glossar erklaert schwierige Begriffe aus den Skill-Dateien in einfacher Sprache.
 
 ## Begriffe von A bis Z
 
@@ -98,9 +97,6 @@ SDLC bedeutet: der ganze Weg von einer Idee bis zu getesteter Software.
 - **Routing-Entscheidung**  
   Die Entscheidung, welcher Skill oder Schritt als naechstes ausgefuehrt wird.
 
-- **SDLC (Software Development Life Cycle)**  
-  Der komplette Lebenszyklus von Software: Idee, Planung, Umsetzung, Test, Verbesserung.
-
 - **Scorecard**  
   Eine Bewertungstabelle mit Punkten, damit Entscheidungen nachvollziehbar sind.
 
@@ -110,11 +106,8 @@ SDLC bedeutet: der ganze Weg von einer Idee bis zu getesteter Software.
 - **Split-Plan**  
   Ein Plan, eine zu grosse Aufgabe in kleinere, machbare Teile aufzuteilen.
 
-- **Stakeholder**  
-  Menschen, die vom Projekt betroffen sind oder wichtige Entscheidungen treffen.
-
-- **Status-Lifecycle**  
-  Die feste Reihenfolge von Statuswerten, z. B. `Entwurf` -> `In Bearbeitung` -> `Bereit zur Abnahme` -> `Erledigt`.
+- **Status**  
+  Der Fortschrittszustand eines Dokuments, z. B. `Entwurf` oder `Erledigt`.
 
 - **Story Point / T-Shirt-Groesse**  
   Schaetzung, wie gross oder aufwendig eine Aufgabe ist.
