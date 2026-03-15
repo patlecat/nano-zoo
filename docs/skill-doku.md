@@ -123,23 +123,23 @@ Ziel ist ein nachvollziehbarer Ablauf von Produktidee -> PRD -> Review -> Storie
 
 ## Prompt-Vorlagen (kurz)
 1. Start:
-   - `Nutze workflow-start. Erstelle aus dieser Idee ein PRD und speichere als docs/workflow/01-prd.md.`
+   - Nutze `workflow-start`. Erstelle aus dieser Idee ein PRD und speichere als docs/workflow/01-prd.md.
 2. PRD prüfen:
-   - `Nutze prd-bewerten. Bewerte docs/workflow/01-prd.md und speichere als docs/workflow/02-prd-review.md.`
+   - Nutze `prd-bewerten`. Bewerte docs/workflow/01-prd.md und speichere als docs/workflow/02-prd-review.md.
 3. Stories erzeugen:
-   - `Nutze story-erstellen. Verwende docs/workflow/01-prd.md und docs/workflow/02-prd-review.md und speichere als docs/workflow/03-story.md.`
+   - Nutze `story-erstellen`. Verwende docs/workflow/01-prd.md und docs/workflow/02-prd-review.md und speichere als docs/workflow/03-story.md.
 4. Stories prüfen:
-   - `Nutze story-bewerten. Bewerte docs/workflow/03-story.md und speichere als docs/workflow/04-story-review.md.`
+   - Nutze `story-bewerten`. Bewerte docs/workflow/03-story.md und speichere als docs/workflow/04-story-review.md.
 5. Story-Größe prüfen und ggf. splitten:
-   - `Nutze story-groesse-bewerten. Prüfe ob Story <ID/Titel> zu groß ist und erstelle bei Bedarf einen Split-Plan in technischer Reihenfolge unter docs/workflow/07-story-split-review.md.`
+   - Nutze `story-groesse-bewerten`. Prüfe ob Story <ID/Titel> zu groß ist und erstelle bei Bedarf einen Split-Plan in technischer Reihenfolge unter docs/workflow/07-story-split-review.md.
 6. Story implementieren:
-   - `Nutze story-implementieren. Implementiere Story <ID/Titel> aus docs/workflow/03-story.md und dokumentiere das Ergebnis in docs/workflow/06-story-implementation.md.`
+   - Nutze `story-implementieren`. Implementiere Story <ID/Titel> aus docs/workflow/03-story.md und dokumentiere das Ergebnis in docs/workflow/06-story-implementation.md.
 7. Story mit Vitest testen:
-   - `Nutze story-testen-vitest. Pruefe die Story-Implementierung gegen die Akzeptanzkriterien und speichere das Test-Review als docs/workflow/08-story-test-review.md.`
+   - Nutze `story-testen-vitest`. Pruefe die Story-Implementierung gegen die Akzeptanzkriterien und speichere das Test-Review als docs/workflow/08-story-test-review.md.
 8. UX bewerten (optional):
-   - `Nutze ux-bewerten im Modus story. Bewerte docs/workflow/03-story.md und speichere als docs/workflow/05-ux-review.md.`
+   - Nutze `ux-bewerten` im Modus story. Bewerte docs/workflow/03-story.md und speichere als docs/workflow/05-ux-review.md.
 9. Nächsten Schritt automatisch bestimmen:
-   - `Nutze workflow-orchestrator mit <eingabedatei> und schreibe docs/workflow/99-workflow-handoff.md.`
+   - Nutze `workflow-orchestrator` mit <eingabedatei> und schreibe docs/workflow/99-workflow-handoff.md.
 
 ## Qualitätscheck pro Schritt
 - Frontmatter vollständig und konsistent.
