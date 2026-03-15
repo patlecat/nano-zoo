@@ -1,6 +1,8 @@
 ---
 name: workflow-start
 description: Startet den PRD-zu-Story-Workflow aus einer kurzen Produktidee, erzeugt die initiale PRD-Datei und gibt den nächsten Skill für den Folge-Schritt vor.
+created_at: "2026-03-15 18:59:46 +01:00"
+modified_at: "2026-03-15 19:18:26 +01:00"
 ---
 
 # Workflow Start
@@ -19,6 +21,16 @@ Erzeuge aus einer kurzen Idee ein initiales PRD-Dokument, damit der dokumentenba
   - Business-Ziel
   - Technische Randbedingungen
   - Zeitrahmen
+
+## Startvorgabe (Pflicht)
+1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
+2. Verwende diesen Zeitwert konsistent für Datumsfelder im erzeugten Artefakt.
+
+## Status-Regeln (verbindlich)
+- Verwende im erzeugten Dokument das Feld `Status`.
+- Zulässige Werte: `Entwurf`, `In Bearbeitung`, `Bereit zur Abnahme`, `Erledigt`.
+- Status müssen in genau dieser Reihenfolge durchlaufen werden; kein Überspringen.
+- Setze `Erledigt` nur, wenn alle inhaltlichen Anforderungen vollständig erfüllt sind.
 
 ## Arbeitsanweisung
 1. Verdichte die Eingabe zu einer klaren Problemstellung.
@@ -40,11 +52,13 @@ Erzeuge aus einer kurzen Idee ein initiales PRD-Dokument, damit der dokumentenba
 ---
 artifact_type: prd
 version: 1
-status: draft
+Status: Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt
 source_inputs:
   - <kurze-produktidee-oder-quelle>
 generated_by: workflow-start
 sprache: de
+created_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
+modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 ---
 
 # <PRD-Titel>

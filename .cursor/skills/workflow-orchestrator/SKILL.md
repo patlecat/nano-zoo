@@ -1,12 +1,14 @@
 ---
 name: workflow-orchestrator
 description: Steuert einen dokumentenbasierten Produkt-Workflow (PRD erstellen/bewerten, Story erstellen/bewerten), prüft Eingaben gegen ein einheitliches Artefakt-Schema und entscheidet den nächsten sinnvollen Schritt.
+created_at: "2026-03-15 18:59:46 +01:00"
+modified_at: "2026-03-15 19:18:26 +01:00"
 ---
 
 # Workflow Orchestrator
 
 ## Zweck
-Koordiniert den nächsten Schritt im Workflow anhand eines Eingabe-Artefakts (`artifact_type`, `status`) und erzeugt ein standardisiertes Übergabe-Dokument für den nächsten Skill.
+Koordiniert den nächsten Schritt im Workflow anhand eines Eingabe-Artefakts (`artifact_type`, `Status`) und erzeugt ein standardisiertes Übergabe-Dokument für den nächsten Skill.
 
 ## Geltungsbereich
 Dieser Skill führt keine fachliche Erstellung/Bewertung selbst aus, sondern:
@@ -24,22 +26,32 @@ Dieser Skill führt keine fachliche Erstellung/Bewertung selbst aus, sondern:
 - Primär: Eine Markdown-Datei mit YAML-Frontmatter:
   - `artifact_type`
   - `version`
-  - `status`
+  - `Status`
   - `source_inputs`
   - `generated_by`
   - `sprache`
 - Optional: Nutzerziel (z. B. "nächster Schritt", "erneut prüfen", "überarbeiten")
+
+## Startvorgabe (Pflicht)
+1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
+2. Verwende diesen Zeitwert konsistent für Datumsfelder im erzeugten Artefakt.
+
+## Status-Regeln (verbindlich)
+- Verwende im erzeugten Dokument das Feld `Status`.
+- Zulässige Werte: `Entwurf`, `In Bearbeitung`, `Bereit zur Abnahme`, `Erledigt`.
+- Status müssen in genau dieser Reihenfolge durchlaufen werden; kein Überspringen.
+- Setze `Erledigt` nur, wenn alle Inhalte des jeweiligen Artefakts vollständig abgeschlossen sind.
 
 ## Validierung (Pflicht)
 Vor Routing prüfen:
 - Datei ist Markdown.
 - YAML-Frontmatter vorhanden.
 - `artifact_type` ist einer von: `prd`, `prd_review`, `story`, `story_review`
-- `status` ist einer von: `draft`, `approved`, `needs_revision`
+- `Status` ist einer von: `Entwurf`, `In Bearbeitung`, `Bereit zur Abnahme`, `Erledigt`
 - `sprache` ist `de`
 
 Wenn Validierung fehlschlägt:
-- setze `status: needs_revision`
+- setze `Status` auf einen gültigen Zwischenstand (mindestens `Entwurf`)
 - liste konkrete Korrekturen in `## Revision Instructions`
 - route auf den Skill, der das Artefakt reparieren kann (meist Erstellungs-Skill)
 
@@ -52,11 +64,11 @@ Wenn Validierung fehlschlägt:
    - Next skill: `prd-bewerten`
    - Grund: PRD muss vor Story-Schnitt bewertet werden.
 
-3. **artifact_type=prd_review & status=approved**
+3. **artifact_type=prd_review & Ergebnis=approved**
    - Next skill: `story-erstellen`
    - Grund: Freigegebenes PRD kann in Stories überführt werden.
 
-4. **artifact_type=prd_review & status=needs_revision**
+4. **artifact_type=prd_review & Ergebnis=needs_revision**
    - Next skill: `prd-erstellen`
    - Grund: PRD muss gemäß Review korrigiert werden.
 
@@ -64,12 +76,12 @@ Wenn Validierung fehlschlägt:
    - Next skill: `story-bewerten`
    - Grund: Stories vor Umsetzung prüfen.
 
-6. **artifact_type=story_review & status=approved**
+6. **artifact_type=story_review & Ergebnis=approved**
    - Next skill: `story-erstellen` oder nachgelagerter Implementierungs-Skill
    - Standard: `story-erstellen` nur falls explizit neue Stories abgeleitet werden sollen.
    - Sonst: Workflow-Ende mit `approved`.
 
-7. **artifact_type=story_review & status=needs_revision**
+7. **artifact_type=story_review & Ergebnis=needs_revision**
    - Next skill: `story-erstellen`
    - Grund: Stories müssen überarbeitet werden.
 
@@ -86,11 +98,13 @@ Wenn Validierung fehlschlägt:
 ---
 artifact_type: workflow_handoff
 version: 1
-status: draft|approved|needs_revision
+Status: Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt
 source_inputs:
   - <pfad-zum-eingabeartefakt-oder-beschreibung>
 generated_by: workflow-orchestrator
 sprache: de
+created_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
+modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 ---
 
 # Workflow-Handoff
@@ -103,7 +117,8 @@ sprache: de
 
 ## Routing-Entscheidung
 - Current artifact_type: <...>
-- Current status: <...>
+- Current Status: <Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt>
+- Ergebnis (falls Review): <approved|needs_revision|ok|zu_gross|n/a>
 - Next skill: <prd-erstellen|prd-bewerten|story-erstellen|story-bewerten>
 - Begründung: <kurz und konkret>
 
@@ -112,7 +127,7 @@ sprache: de
 - Verwende Eingabe: <quellpfad>
 
 ## Revision Instructions
-- <nur ausfüllen, wenn needs_revision>
+- <nur ausfüllen, wenn Ergebnis=needs_revision oder zu_gross>
 
 ## Handoff
 - Expected input file: <zielpfad>
@@ -128,5 +143,5 @@ sprache: de
 
 ## Qualitätskriterien
 - Routing ist deterministisch und regelbasiert.
-- Jeder `needs_revision`-Status enthält konkrete Korrekturschritte.
+- Status-Fortschritt ist lückenlos und ohne Überspringen.
 - Handoff ist direkt von einem Folgeschritt nutzbar.

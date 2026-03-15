@@ -1,6 +1,8 @@
 ---
 name: prd-bewerten
 description: Bewertet ein PRD auf Vollständigkeit, Klarheit, Machbarkeit und Testbarkeit und erzeugt ein strukturiertes Review-Artefakt mit konkreten Überarbeitungsanweisungen.
+created_at: "2026-03-15 18:59:46 +01:00"
+modified_at: "2026-03-15 19:18:26 +01:00"
 ---
 
 # PRD bewerten
@@ -10,6 +12,16 @@ Prüfe ein vorhandenes PRD systematisch und liefere eine klare Entscheidung: `ap
 
 ## Eingaben
 - Genau eine PRD-Markdown-Datei (`artifact_type: prd`)
+
+## Startvorgabe (Pflicht)
+1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
+2. Verwende diesen Zeitwert konsistent für Datumsfelder im erzeugten Artefakt.
+
+## Status-Regeln (verbindlich)
+- Verwende im erzeugten Dokument das Feld `Status`.
+- Zulässige Werte: `Entwurf`, `In Bearbeitung`, `Bereit zur Abnahme`, `Erledigt`.
+- Status müssen in genau dieser Reihenfolge durchlaufen werden; kein Überspringen.
+- Setze `Erledigt` nur, wenn Review, Findings und Revision Instructions vollständig dokumentiert sind.
 
 ## Arbeitsanweisung
 1. Prüfe, ob alle Pflichtsektionen vorhanden sind.
@@ -35,11 +47,13 @@ Score je Kriterium: 0-5
 ---
 artifact_type: prd_review
 version: 1
-status: approved|needs_revision
+Status: Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt
 source_inputs:
   - <pfad-zur-prd-datei>
 generated_by: prd-bewerten
 sprache: de
+created_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
+modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 ---
 
 # PRD-Review: <PRD-Titel>
@@ -60,7 +74,7 @@ sprache: de
 - <konkrete Änderung 2>
 
 ## Entscheidung
-- Status: approved|needs_revision
+- Ergebnis: approved|needs_revision
 - Begründung: <kurz>
 
 ## Handoff

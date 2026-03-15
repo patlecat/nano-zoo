@@ -1,6 +1,8 @@
 ---
 name: story-bewerten
 description: Bewertet User Stories auf Umsetzbarkeit, Klarheit, Testbarkeit, Scope-Schnitt und Abhängigkeiten und erzeugt ein strukturiertes Review-Artefakt.
+created_at: "2026-03-15 18:59:46 +01:00"
+modified_at: "2026-03-15 19:18:26 +01:00"
 ---
 
 # Story bewerten
@@ -10,6 +12,16 @@ Validiere, ob Stories umsetzbar, testbar und sinnvoll geschnitten sind, bevor Pl
 
 ## Eingaben
 - Story-Datei (`artifact_type: story`)
+
+## Startvorgabe (Pflicht)
+1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
+2. Verwende diesen Zeitwert konsistent für Datumsfelder im erzeugten Artefakt.
+
+## Status-Regeln (verbindlich)
+- Verwende im erzeugten Dokument das Feld `Status`.
+- Zulässige Werte: `Entwurf`, `In Bearbeitung`, `Bereit zur Abnahme`, `Erledigt`.
+- Status müssen in genau dieser Reihenfolge durchlaufen werden; kein Überspringen.
+- Setze `Erledigt` nur, wenn Review, Findings und Revision Instructions vollständig dokumentiert sind.
 
 ## Arbeitsanweisung
 1. Prüfe jede Story auf Verständlichkeit und Nutzenbezug.
@@ -32,11 +44,13 @@ Score je Kriterium: 0-5
 ---
 artifact_type: story_review
 version: 1
-status: approved|needs_revision
+Status: Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt
 source_inputs:
   - <pfad-zur-story-datei>
 generated_by: story-bewerten
 sprache: de
+created_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
+modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 ---
 
 # Story-Review: <Story-Paket-Titel>
@@ -58,7 +72,7 @@ sprache: de
 - <konkrete Änderung 2>
 
 ## Entscheidung
-- Status: approved|needs_revision
+- Ergebnis: approved|needs_revision
 - Begründung: <kurz>
 
 ## Handoff
