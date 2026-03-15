@@ -5,4 +5,5 @@ A zoo for nano-monsters. Made for the Kids-Hackathon 2026 in Zürich.
 
 ## Skill Workflow (Kurz)
 Die vollständige Skill-Dokumentation mit Prompts und Workflow findest du in der Datei [docs/skill-doku.md](docs/skill-doku.md).
+
 Ein kindgerechtes Glossar mit Erklärungen zu Fachbegriffen findest du in [docs/glossar.md](docs/glossar.md).
