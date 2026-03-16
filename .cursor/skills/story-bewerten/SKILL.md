@@ -12,10 +12,16 @@ Validiere, ob Stories umsetzbar, testbar und sinnvoll geschnitten sind, bevor Pl
 
 ## Eingaben
 - Story-Datei (`artifact_type: story`)
+- Architektur-Referenz: `docs/Architecture-Guide.md`
 
 ## Startvorgabe (Pflicht)
 1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
 2. Verwende diesen Zeitwert konsistent für Datumsfelder im erzeugten Artefakt.
+
+## Architektur-Referenz (Pflicht)
+- Lies vor jeder Bewertung zwingend `docs/Architecture-Guide.md`.
+- Beurteile Umsetzbarkeit, Scope-Schnitt und Risiken explizit gegen die dort definierten Architekturprinzipien.
+- Bei Widerspruechen zwischen Story und Architektur-Guide: als Finding markieren und `needs_revision` begruenden.
 
 ## Status-Regeln (verbindlich)
 - Verwende im erzeugten Dokument das Feld `Status`.
@@ -24,11 +30,12 @@ Validiere, ob Stories umsetzbar, testbar und sinnvoll geschnitten sind, bevor Pl
 - Setze `Erledigt` nur, wenn Review, Findings und Revision Instructions vollständig dokumentiert sind.
 
 ## Arbeitsanweisung
-1. Prüfe jede Story auf Verständlichkeit und Nutzenbezug.
-2. Prüfe Akzeptanzkriterien auf Testbarkeit und Eindeutigkeit.
-3. Prüfe Scope-Schnitt (nicht zu groß, nicht zu vage).
-4. Prüfe Abhängigkeiten und Risiken.
-5. Erzeuge ein Story-Review-Artefakt mit klarer Entscheidung.
+1. Lies `docs/Architecture-Guide.md` als verbindliche Referenz.
+2. Prüfe jede Story auf Verständlichkeit und Nutzenbezug.
+3. Prüfe Akzeptanzkriterien auf Testbarkeit und Eindeutigkeit.
+4. Prüfe Scope-Schnitt (nicht zu groß, nicht zu vage) inkl. Architekturfits.
+5. Prüfe Abhängigkeiten, Risiken und potenzielle Architekturkonflikte.
+6. Erzeuge ein Story-Review-Artefakt mit klarer Entscheidung.
 
 ## Bewertungsmaßstab
 Score je Kriterium: 0-5

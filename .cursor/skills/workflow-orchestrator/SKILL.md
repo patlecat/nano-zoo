@@ -8,7 +8,7 @@ modified_at: "2026-03-15 19:18:26 +01:00"
 # Workflow Orchestrator
 
 ## Zweck
-Koordiniert den nächsten Schritt im Workflow anhand eines Eingabe-Artefakts (`artifact_type`, `Status`) und erzeugt ein standardisiertes Übergabe-Dokument für den nächsten Skill.
+Koordiniert den nächsten Schritt im Workflow anhand eines Eingabe-Artefakts (`artifact_type`, Prozessstatus im Feld `Status`) und erzeugt ein standardisiertes Übergabe-Dokument für den nächsten Skill.
 
 ## Geltungsbereich
 Dieser Skill führt keine fachliche Erstellung/Bewertung selbst aus, sondern:
@@ -36,11 +36,11 @@ Dieser Skill führt keine fachliche Erstellung/Bewertung selbst aus, sondern:
 1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
 2. Verwende diesen Zeitwert konsistent für Datumsfelder im erzeugten Artefakt.
 
-## Status-Regeln (verbindlich)
-- Verwende im erzeugten Dokument das Feld `Status`.
-- Zulässige Werte: `Entwurf`, `In Bearbeitung`, `Bereit zur Abnahme`, `Erledigt`.
-- Status müssen in genau dieser Reihenfolge durchlaufen werden; kein Überspringen.
-- Setze `Erledigt` nur, wenn alle Inhalte des jeweiligen Artefakts vollständig abgeschlossen sind.
+## Prozessstatus-Regeln (verbindlich)
+- Der `workflow-orchestrator` hat **keinen eigenen Bearbeitungsstatus**.
+- Er liest ausschließlich den Prozessstatus des Eingabe-Artefakts (Feld `Status`) und gibt ihn im Handoff als Snapshot wieder.
+- Zulässige Prozessstatus-Werte im Eingabe-Artefakt: `Entwurf`, `In Bearbeitung`, `Bereit zur Abnahme`, `Erledigt`.
+- Der Orchestrator schreibt keinen Prozessfortschritt fort und setzt keinen neuen Status.
 
 ## Validierung (Pflicht)
 Vor Routing prüfen:
@@ -51,7 +51,7 @@ Vor Routing prüfen:
 - `sprache` ist `de`
 
 Wenn Validierung fehlschlägt:
-- setze `Status` auf einen gültigen Zwischenstand (mindestens `Entwurf`)
+- übernimm keinen eigenen Status; dokumentiere den Prozessstatus als `n/a` im Handoff, falls nicht valide
 - liste konkrete Korrekturen in `## Revision Instructions`
 - route auf den Skill, der das Artefakt reparieren kann (meist Erstellungs-Skill)
 
@@ -98,7 +98,7 @@ Wenn Validierung fehlschlägt:
 ---
 artifact_type: workflow_handoff
 version: 1
-Status: Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt
+process_status_snapshot: Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt|n/a
 source_inputs:
   - <pfad-zum-eingabeartefakt-oder-beschreibung>
 generated_by: workflow-orchestrator
@@ -117,7 +117,7 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 
 ## Routing-Entscheidung
 - Current artifact_type: <...>
-- Current Status: <Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt>
+- Current process status: <Entwurf|In Bearbeitung|Bereit zur Abnahme|Erledigt|n/a>
 - Ergebnis (falls Review): <approved|needs_revision|ok|zu_gross|n/a>
 - Next skill: <prd-erstellen|prd-bewerten|story-erstellen|story-bewerten>
 - Begründung: <kurz und konkret>
@@ -143,5 +143,5 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 
 ## Qualitätskriterien
 - Routing ist deterministisch und regelbasiert.
-- Status-Fortschritt ist lückenlos und ohne Überspringen.
+- Prozessstatus des Eingabe-Artefakts wird korrekt gespiegelt, nicht durch den Orchestrator fortgeschrieben.
 - Handoff ist direkt von einem Folgeschritt nutzbar.

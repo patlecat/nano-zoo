@@ -10,6 +10,12 @@ Ein kindgerechtes Glossar mit Erklaerungen zu wichtigen Fachbegriffen findest du
 - Reviews entscheiden explizit zwischen `approved` und `needs_revision`.
 - Sprache in allen Artefakten: Deutsch (`sprache: de`).
 
+## Verbindliche Architektur-Referenz
+- Der zentrale technische Leitfaden ist `docs/Architecture-Guide.md`.
+- Die Skills `story-implementieren`, `story-bewerten`, `story-testen-vitest` und `ux-bewerten` muessen diesen Guide vor der eigentlichen Bearbeitung zuerst lesen.
+- Entscheidungen, Findings, Tests und UX-Empfehlungen in diesen Skills muessen mit dem Architecture-Guide konsistent sein.
+- Bei Konflikten zwischen Story-Vorgaben und Architecture-Guide: Konflikt explizit dokumentieren und als `needs_revision` bzw. Blocker behandeln.
+
 ## Verbindliches Status-Feld
 - Jedes durch Skills erzeugte Dokument nutzt das Frontmatter-Feld `Status`.
 - Zulässige Werte sind ausschließlich:
@@ -56,6 +62,7 @@ Ein kindgerechtes Glossar mit Erklaerungen zu wichtigen Fachbegriffen findest du
 - Hauptoutput: Story-Review (`artifact_type: story_review`) mit klarer Entscheidung.
 - Standardpfad: `docs/workflow/04-story-review.md`.
 - Aufrufen wenn: vor Umsetzung Qualität und Schnitt der Stories abgesichert werden soll.
+- Pflicht-Referenz: `docs/Architecture-Guide.md` zuerst lesen.
 
 ### `story-groesse-bewerten`
 - Zweck: Prüfen, ob eine Story für die Umsetzung zu groß ist und bei Bedarf in kleinere Unter-Stories aufteilen.
@@ -70,6 +77,7 @@ Ein kindgerechtes Glossar mit Erklaerungen zu wichtigen Fachbegriffen findest du
 - Hauptoutput: Implementierungsnachweis (`artifact_type: story_implementation`) mit Traceability AK -> Code -> Test.
 - Standardpfad: `docs/workflow/06-story-implementation.md`.
 - Aufrufen wenn: eine freigegebene Story umgesetzt werden soll und klare Nachvollziehbarkeit verlangt ist.
+- Pflicht-Referenz: `docs/Architecture-Guide.md` zuerst lesen.
 
 ### `story-testen-vitest`
 - Zweck: Implementierten Story-Code testen oder fehlende Tests schreiben, um die korrekte Story-Umsetzung abzusichern.
@@ -78,6 +86,7 @@ Ein kindgerechtes Glossar mit Erklaerungen zu wichtigen Fachbegriffen findest du
 - Standardpfad: `docs/workflow/08-story-test-review.md`.
 - Aufrufen wenn: nach Implementierung die Story-Kriterien testseitig verifiziert werden sollen.
 - Wichtig: Für diesen Schritt wird immer Vitest verwendet.
+- Pflicht-Referenz: `docs/Architecture-Guide.md` zuerst lesen.
 
 ### `ux-bewerten`
 - Zweck: UX-Qualität projektweit (`project`) oder bezogen auf eine konkrete Story (`story`) bewerten.
@@ -85,6 +94,7 @@ Ein kindgerechtes Glossar mit Erklaerungen zu wichtigen Fachbegriffen findest du
 - Hauptoutput: UX-Review (`artifact_type: ux_review`) mit Scorecard, Findings und Verbesserungsplan.
 - Standardpfad: `docs/workflow/05-ux-review.md`.
 - Aufrufen wenn: UX-Risiken früh erkannt, priorisiert und in konkrete Verbesserungen überführt werden sollen.
+- Pflicht-Referenz: `docs/Architecture-Guide.md` zuerst lesen.
 
 ### `workflow-orchestrator`
 - Zweck: nächsten Schritt deterministisch bestimmen.
@@ -150,6 +160,7 @@ Ein kindgerechtes Glossar mit Erklaerungen zu wichtigen Fachbegriffen findest du
 - `source_inputs` enthält die tatsächlichen Eingabedateien.
 - Review-Artefakte enthalten konkrete `Revision Instructions`.
 - Handoff benennt immer einen eindeutigen nächsten Skill.
+- Falls Skill = `story-implementieren|story-bewerten|story-testen-vitest|ux-bewerten`: `docs/Architecture-Guide.md` wurde vorab gelesen und erkennbar berücksichtigt.
 
 ## Ablauf auf einen Blick
 | Schritt | Input | Skill | Output |

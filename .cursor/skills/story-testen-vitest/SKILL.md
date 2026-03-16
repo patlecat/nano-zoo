@@ -14,6 +14,7 @@ Pruefe, ob eine Story technisch korrekt umgesetzt ist, und erstelle bei Bedarf f
 - Pflicht:
   - Story-Datei (`artifact_type: story`) oder eindeutig referenzierte Story
   - vorhandener Implementierungsstand im Projekt
+  - Architektur-Referenz: `docs/Architecture-Guide.md`
 - Optional:
   - Story-Implementierungsartefakt (`artifact_type: story_implementation`)
   - Story-Review (`artifact_type: story_review`)
@@ -22,6 +23,11 @@ Pruefe, ob eine Story technisch korrekt umgesetzt ist, und erstelle bei Bedarf f
 ## Startvorgabe (Pflicht)
 1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
 2. Verwende diesen Zeitwert konsistent fuer Datumsfelder im erzeugten Artefakt.
+
+## Architektur-Referenz (Pflicht)
+- Lies vor jeder Testarbeit zwingend `docs/Architecture-Guide.md`.
+- Leite daraus ab, welche technischen Risiken und Architekturgrenzen testseitig abgesichert werden muessen.
+- Teste nicht nur Story-Funktionalitaet, sondern auch architektonisch kritische Regressionen.
 
 ## Status-Regeln (verbindlich)
 - Verwende im erzeugten Dokument das Feld `Status`.
@@ -37,14 +43,15 @@ Pruefe, ob eine Story technisch korrekt umgesetzt ist, und erstelle bei Bedarf f
 - Testdateien und Testnamen muessen die Story-Kriterien nachvollziehbar abbilden.
 
 ## Arbeitsanweisung
-1. Lies Scope (`In/Out`) und Akzeptanzkriterien der Story.
-2. Erstelle eine Test-Mapping-Liste:
+1. Lies `docs/Architecture-Guide.md` als verbindliche Referenz.
+2. Lies Scope (`In/Out`) und Akzeptanzkriterien der Story.
+3. Erstelle eine Test-Mapping-Liste:
    - Akzeptanzkriterium -> Testfall (bestehend oder neu)
-3. Pruefe vorhandene Vitest-Tests auf Abdeckung und Qualitaet.
-4. Schreibe/ergaenze fehlende Vitest-Tests fuer nicht abgedeckte Kriterien.
-5. Fuehre Vitest aus und dokumentiere Ergebnisse.
-6. Markiere nicht erfuellte Kriterien oder Blocker eindeutig.
-7. Erzeuge ein Test-Artefakt gemaess Ausgabestruktur.
+4. Pruefe vorhandene Vitest-Tests auf Abdeckung und Qualitaet.
+5. Schreibe/ergaenze fehlende Vitest-Tests fuer nicht abgedeckte Kriterien und relevante Architektur-Risiken.
+6. Fuehre Vitest aus und dokumentiere Ergebnisse.
+7. Markiere nicht erfuellte Kriterien oder Blocker eindeutig.
+8. Erzeuge ein Test-Artefakt gemaess Ausgabestruktur.
 
 ## Ausgaberegeln (verbindlich)
 - Sprache: Deutsch.

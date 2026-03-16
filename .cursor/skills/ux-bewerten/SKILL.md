@@ -18,6 +18,7 @@ Bewerte die User-Experience-Qualität entweder auf Projekt-/Feature-Ebene oder a
 - Pflicht:
   - Scope-Modus: `project` oder `story`
   - Bewertungsgegenstand (Projektkontext, Feature-Beschreibung oder Story-Datei)
+  - Architektur-Referenz: `docs/Architecture-Guide.md`
 - Optional:
   - Zielgruppe/Persona
   - relevante Screens/Flows
@@ -26,6 +27,11 @@ Bewerte die User-Experience-Qualität entweder auf Projekt-/Feature-Ebene oder a
 ## Startvorgabe (Pflicht)
 1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
 2. Verwende diesen Zeitwert konsistent für Datumsfelder im erzeugten Artefakt.
+
+## Architektur-Referenz (Pflicht)
+- Lies vor jeder UX-Bewertung zwingend `docs/Architecture-Guide.md`.
+- Beruecksichtige technische Leitplanken aus dem Guide bei allen Empfehlungen.
+- Schlage keine UX-Massnahmen vor, die den verbindlichen Architekturprinzipien widersprechen.
 
 ## Status-Regeln (verbindlich)
 - Verwende im erzeugten Dokument das Feld `Status`.
@@ -43,12 +49,13 @@ Bewerte die User-Experience-Qualität entweder auf Projekt-/Feature-Ebene oder a
 - Story-Fitness (nur `story`): Ist die Story UX-seitig testbar und sinnvoll geschnitten?
 
 ## Arbeitsanweisung
-1. Bestimme den Modus (`project` oder `story`) aus der Eingabe.
-2. Leite den relevanten Haupt-Flow und zentrale Interaktionen ab.
-3. Werte jeden Bewertungsbereich mit 0-5 und kurzer Begründung.
-4. Identifiziere Findings mit Priorität (`kritisch|hoch|mittel|niedrig`).
-5. Formuliere konkrete Verbesserungsmaßnahmen, priorisiert nach Wirkung und Aufwand.
-6. Erzeuge das UX-Review-Artefakt gemäß Ausgabestruktur.
+1. Lies `docs/Architecture-Guide.md` als verbindliche Referenz.
+2. Bestimme den Modus (`project` oder `story`) aus der Eingabe.
+3. Leite den relevanten Haupt-Flow und zentrale Interaktionen ab.
+4. Werte jeden Bewertungsbereich mit 0-5 und kurzer Begründung.
+5. Identifiziere Findings mit Priorität (`kritisch|hoch|mittel|niedrig`).
+6. Formuliere konkrete Verbesserungsmaßnahmen, priorisiert nach Wirkung und Aufwand.
+7. Erzeuge das UX-Review-Artefakt gemäß Ausgabestruktur.
 
 ## Ausgaberegeln (verbindlich)
 - Ausgabe als eine Markdown-Datei.
