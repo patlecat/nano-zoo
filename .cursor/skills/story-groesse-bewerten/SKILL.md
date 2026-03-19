@@ -2,7 +2,7 @@
 name: story-groesse-bewerten
 description: Bewertet, ob eine Story fuer die Implementierung zu gross ist, und schlaegt bei Bedarf eine Aufteilung in kleinere Unter-Stories in technischer Implementierungsreihenfolge vor.
 created_at: "2026-03-15 19:08:59 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # Story Groesse bewerten
@@ -61,8 +61,18 @@ Eine Story gilt als `zu_gross`, wenn:
 5. Begruende die Reihenfolge ueber Abhaengigkeiten.
 6. Erzeuge das Ergebnis gemaess Ausgabestruktur.
 
+## Sprachregeln fuer Kinder (Pflicht)
+- Verwende kurze, klare Saetze.
+- Nutze einfache Woerter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff noetig ist, erklaere ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verstaendlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
+
 ## Ausgaberegeln (verbindlich)
-- Sprache: Deutsch.
+- Sprache: Deutsch, klar und kindgerecht.
+- Fachbegriffe vermeiden oder direkt einfach erklaeren.
 - Ausgabe als eine Markdown-Datei.
 - Bei `zu_gross` ist ein vollstaendiger Split-Plan Pflicht.
 - Jede Unter-Story benoetigt Akzeptanzkriterien und einen klaren technischen Zweck.
@@ -127,3 +137,4 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 - Entscheidung ist aus den Bewertungsdimensionen nachvollziehbar.
 - Split-Plan ist in technischer Reihenfolge und ohne Zirkelabhaengigkeiten.
 - Jede Unter-Story ist fuer sich testbar und implementierbar.
+- Sprache ist fuer Kinder gut verstaendlich; Fachbegriffe sind vermieden oder erklaert.

@@ -2,7 +2,7 @@
 name: story-bewerten
 description: Bewertet User Stories auf Umsetzbarkeit, Klarheit, Testbarkeit, Scope-Schnitt und Abhängigkeiten und erzeugt ein strukturiertes Review-Artefakt.
 created_at: "2026-03-15 18:59:46 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # Story bewerten
@@ -36,6 +36,15 @@ Validiere, ob Stories umsetzbar, testbar und sinnvoll geschnitten sind, bevor Pl
 4. Prüfe Scope-Schnitt (nicht zu groß, nicht zu vage) inkl. Architekturfits.
 5. Prüfe Abhängigkeiten, Risiken und potenzielle Architekturkonflikte.
 6. Erzeuge ein Story-Review-Artefakt mit klarer Entscheidung.
+
+## Sprachregeln für Kinder (Pflicht)
+- Verwende kurze, klare Sätze.
+- Nutze einfache Wörter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff nötig ist, erkläre ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verständlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
 
 ## Bewertungsmaßstab
 Score je Kriterium: 0-5
@@ -91,3 +100,4 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 - Pro Finding mindestens eine konkrete Korrekturmaßnahme.
 - Klare Freigabe-/Blocker-Entscheidung.
 - Keine generischen Aussagen ohne Bezug zur Story.
+- Sprache ist für Kinder gut verständlich; Fachbegriffe sind vermieden oder erklärt.

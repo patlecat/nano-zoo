@@ -2,7 +2,7 @@
 name: workflow-orchestrator
 description: Steuert einen dokumentenbasierten Produkt-Workflow (PRD erstellen/bewerten, Story erstellen/bewerten), prüft Eingaben gegen ein einheitliches Artefakt-Schema und entscheidet den nächsten sinnvollen Schritt.
 created_at: "2026-03-15 18:59:46 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # Workflow Orchestrator
@@ -85,9 +85,19 @@ Wenn Validierung fehlschlägt:
    - Next skill: `story-erstellen`
    - Grund: Stories müssen überarbeitet werden.
 
+## Sprachregeln für Kinder (Pflicht)
+- Verwende kurze, klare Sätze.
+- Nutze einfache Wörter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff nötig ist, erkläre ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verständlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
+
 ## Ausgaberegeln (verbindlich)
 - Ausgabe immer als eine Markdown-Datei.
-- Sprache: Deutsch.
+- Sprache: Deutsch, klar und kindgerecht.
+- Fachbegriffe vermeiden oder direkt einfach erklären.
 - Muss einen klaren `Next skill` enthalten.
 - Muss konkrete Eingabe-/Ausgabepfade nennen.
 - Muss umsetzbare nächste Aktion enthalten (kein vages Feedback).
@@ -145,3 +155,4 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 - Routing ist deterministisch und regelbasiert.
 - Prozessstatus des Eingabe-Artefakts wird korrekt gespiegelt, nicht durch den Orchestrator fortgeschrieben.
 - Handoff ist direkt von einem Folgeschritt nutzbar.
+- Sprache ist für Kinder gut verständlich; Fachbegriffe sind vermieden oder erklärt.

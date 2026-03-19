@@ -2,7 +2,7 @@
 name: story-erstellen
 description: Erstellt User Stories aus einem PRD (und optional PRD-Review) inkl. Akzeptanzkriterien, Abgrenzung und Umsetzungsnotizen als strukturiertes Markdown-Artefakt.
 created_at: "2026-03-15 18:59:46 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # Story erstellen
@@ -50,8 +50,18 @@ Leite aus PRD-Inhalten umsetzbare User Stories ab, die ein Team direkt planen un
 - Wenn Konflikte erkannt werden, dokumentiere sie konkret und definiere eine konfliktfreie Umsetzungsreihenfolge.
 - Berücksichtige immer projektweite technische Standards/Constraints; keine Story darf diesen widersprechen.
 
+## Sprachregeln für Kinder (Pflicht)
+- Verwende kurze, klare Sätze.
+- Nutze einfache Wörter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff nötig ist, erkläre ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verständlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
+
 ## Ausgaberegeln
-- Sprache: Deutsch
+- Sprache: Deutsch, klar und kindgerecht.
+- Fachbegriffe vermeiden oder direkt einfach erklären.
 - Jede Story hat:
   - Titel
   - Story-Typ (`PRD` oder `Change Request`)
@@ -134,3 +144,4 @@ Als <Rolle> möchte ich <Funktion>, damit <Nutzen>.
 - Scope ist klar abgegrenzt.
 - Change-Request-Stories sind konfliktfrei mit bereits implementiertem Stand spezifiziert.
 - Projektstandards/technische Vorgaben sind je Story explizit berücksichtigt.
+- Sprache ist für Kinder gut verständlich; Fachbegriffe sind vermieden oder erklärt.

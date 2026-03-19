@@ -2,7 +2,7 @@
 name: prd-bewerten
 description: Bewertet ein PRD auf Vollständigkeit, Klarheit, Machbarkeit und Testbarkeit und erzeugt ein strukturiertes Review-Artefakt mit konkreten Überarbeitungsanweisungen.
 created_at: "2026-03-15 18:59:46 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # PRD bewerten
@@ -30,6 +30,15 @@ Prüfe ein vorhandenes PRD systematisch und liefere eine klare Entscheidung: `ap
 4. Formuliere konkrete, umsetzbare Verbesserungsschritte.
 5. Erzeuge ein Review-Artefakt in der Pflichtstruktur.
 
+## Sprachregeln für Kinder (Pflicht)
+- Verwende kurze, klare Sätze.
+- Nutze einfache Wörter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff nötig ist, erkläre ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verständlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
+
 ## Bewertungsmaßstab
 Score je Kriterium: 0-5
 - Vollständigkeit
@@ -40,6 +49,10 @@ Score je Kriterium: 0-5
 ## Entscheidungslogik
 - `approved`: Kein kritischer Mangel und Gesamtbild umsetzbar.
 - `needs_revision`: Mindestens ein kritischer Mangel oder gravierende Unklarheit.
+
+## Ausgaberegeln (verbindlich)
+- Sprache: Deutsch, klar und kindgerecht.
+- Fachbegriffe vermeiden oder direkt einfach erklären.
 
 ## Ausgabestruktur (Pflicht)
 
@@ -86,3 +99,4 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 - Kritik ist evidenzbasiert und konkret.
 - Jede Beanstandung enthält eine klare Korrekturaktion.
 - Kein rein allgemeines Feedback ohne Umsetzungshinweis.
+- Sprache ist für Kinder gut verständlich; Fachbegriffe sind vermieden oder erklärt.

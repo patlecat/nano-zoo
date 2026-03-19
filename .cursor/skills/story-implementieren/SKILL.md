@@ -2,7 +2,7 @@
 name: story-implementieren
 description: Implementiert eine konkrete Story im Projekt und haelt sich strikt an Scope, Akzeptanzkriterien und Vorgaben der Story. Verwenden, wenn die Umsetzung einer vorhandenen Story angefordert wird.
 created_at: "2026-03-15 19:05:44 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # Story implementieren
@@ -56,9 +56,19 @@ Setze eine bestehende Story im Code um, ohne den vereinbarten Scope zu verlassen
    - Keine regressiven Seiteneffekte erkennbar?
 7. Erzeuge ein Implementierungs-Artefakt gemaess Ausgabestruktur.
 
+## Sprachregeln fuer Kinder (Pflicht)
+- Verwende kurze, klare Saetze.
+- Nutze einfache Woerter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff noetig ist, erklaere ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verstaendlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
+
 ## Ausgaberegeln (verbindlich)
 - Ausgabe als eine Markdown-Datei.
-- Sprache: Deutsch.
+- Sprache: Deutsch, klar und kindgerecht.
+- Fachbegriffe vermeiden oder direkt einfach erklaeren.
 - Muss eine Kriterium-zu-Code-zu-Test-Nachverfolgbarkeit enthalten.
 - Muss offene Punkte und Blocker klar benennen.
 - Bei nicht vollstaendiger Erfuellung darf `Status` nicht `Erledigt` sein.
@@ -121,3 +131,4 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 - Jedes Akzeptanzkriterium ist mit konkreter Code- und Testreferenz abgedeckt.
 - Keine Umsetzung ausserhalb des Story-Scopes.
 - Blocker und Restarbeiten sind transparent dokumentiert.
+- Sprache ist fuer Kinder gut verstaendlich; Fachbegriffe sind vermieden oder erklaert.

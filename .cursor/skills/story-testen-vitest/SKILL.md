@@ -2,7 +2,7 @@
 name: story-testen-vitest
 description: Testet implementierten Story-Code oder schreibt fehlende Tests fuer eine Story und verwendet dabei ausschliesslich Vitest.
 created_at: "2026-03-15 19:11:57 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # Story testen mit Vitest
@@ -53,8 +53,18 @@ Pruefe, ob eine Story technisch korrekt umgesetzt ist, und erstelle bei Bedarf f
 7. Markiere nicht erfuellte Kriterien oder Blocker eindeutig.
 8. Erzeuge ein Test-Artefakt gemaess Ausgabestruktur.
 
+## Sprachregeln fuer Kinder (Pflicht)
+- Verwende kurze, klare Saetze.
+- Nutze einfache Woerter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff noetig ist, erklaere ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verstaendlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
+
 ## Ausgaberegeln (verbindlich)
-- Sprache: Deutsch.
+- Sprache: Deutsch, klar und kindgerecht.
+- Fachbegriffe vermeiden oder direkt einfach erklaeren.
 - Ausgabe als eine Markdown-Datei.
 - Jedes Akzeptanzkriterium muss einem konkreten Vitest-Testfall zugeordnet sein.
 - Bei fehlschlagenden Tests oder Luecken darf `Status` nicht `Erledigt` sein.
@@ -117,3 +127,4 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 - Alle Akzeptanzkriterien sind testseitig nachvollziehbar zugeordnet.
 - Tests sind deterministisch und fokussieren Story-Verhalten statt Implementierungsdetails.
 - Teststatus und Restluecken sind transparent dokumentiert.
+- Sprache ist fuer Kinder gut verstaendlich; Fachbegriffe sind vermieden oder erklaert.

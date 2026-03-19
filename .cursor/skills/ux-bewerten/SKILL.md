@@ -2,7 +2,7 @@
 name: ux-bewerten
 description: Bewertet die UX-Qualität im aktuellen Projekt oder bezogen auf eine konkrete Story und erzeugt ein strukturiertes UX-Review mit Scorecard, Findings und klaren Verbesserungsschritten.
 created_at: "2026-03-15 19:02:59 +01:00"
-modified_at: "2026-03-15 19:18:26 +01:00"
+modified_at: "2026-03-19 18:11:27 +01:00"
 ---
 
 # UX bewerten
@@ -57,9 +57,19 @@ Bewerte die User-Experience-Qualität entweder auf Projekt-/Feature-Ebene oder a
 6. Formuliere konkrete Verbesserungsmaßnahmen, priorisiert nach Wirkung und Aufwand.
 7. Erzeuge das UX-Review-Artefakt gemäß Ausgabestruktur.
 
+## Sprachregeln für Kinder (Pflicht)
+- Verwende kurze, klare Sätze.
+- Nutze einfache Wörter aus dem Alltag.
+- Vermeide Fachbegriffe, wenn es geht.
+- Wenn ein Fachbegriff nötig ist, erkläre ihn sofort kindgerecht in einem Satz.
+- Stelle Fragen einzeln und verständlich.
+- Gib bei schwierigen Punkten ein kurzes Beispiel.
+- Schreibe freundlich und motivierend.
+
 ## Ausgaberegeln (verbindlich)
 - Ausgabe als eine Markdown-Datei.
-- Sprache: Deutsch.
+- Sprache: Deutsch, klar und kindgerecht.
+- Fachbegriffe vermeiden oder direkt einfach erklären.
 - Findings müssen konkret und nachvollziehbar sein.
 - Jede kritische Feststellung benötigt mindestens eine umsetzbare Maßnahme.
 
@@ -116,3 +126,4 @@ modified_at: <YYYY-MM-DD HH:mm:ss ±HH:MM>
 - Beurteilung ist an konkreten Nutzeraufgaben und Flows ausgerichtet.
 - Empfehlungstexte sind umsetzbar, priorisiert und nicht generisch.
 - Scorecard, Findings und Entscheidung sind konsistent.
+- Sprache ist für Kinder gut verständlich; Fachbegriffe sind vermieden oder erklärt.
