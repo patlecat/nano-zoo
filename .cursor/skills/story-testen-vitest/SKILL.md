@@ -14,6 +14,7 @@ Pruefe, ob eine Story technisch korrekt umgesetzt ist, und erstelle bei Bedarf f
 - Pflicht:
   - Story-Datei (`artifact_type: story`) oder eindeutig referenzierte Story
   - vorhandener Implementierungsstand im Projekt
+  - Testing-Guide-Referenz: `docs/React-Testing-Guide.md`
   - Architektur-Referenz: `docs/Architecture-Guide.md`
 - Optional:
   - Story-Implementierungsartefakt (`artifact_type: story_implementation`)
@@ -23,6 +24,11 @@ Pruefe, ob eine Story technisch korrekt umgesetzt ist, und erstelle bei Bedarf f
 ## Startvorgabe (Pflicht)
 1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
 2. Verwende diesen Zeitwert konsistent fuer Datumsfelder im erzeugten Artefakt.
+
+## Testing-Guide-Referenz (Pflicht)
+- Lies immer zuerst `docs/React-Testing-Guide.md`, bevor du andere Referenzen liest.
+- Nutze den Guide als verbindliche Basis fuer Testaufbau, Testpriorisierung und Qualitaetskriterien.
+- Wenn Testvorgaben aus der Story dem Testing Guide widersprechen: Konflikt dokumentieren und als `needs_revision` markieren.
 
 ## Architektur-Referenz (Pflicht)
 - Lies vor jeder Testarbeit zwingend `docs/Architecture-Guide.md`.
@@ -43,15 +49,16 @@ Pruefe, ob eine Story technisch korrekt umgesetzt ist, und erstelle bei Bedarf f
 - Testdateien und Testnamen muessen die Story-Kriterien nachvollziehbar abbilden.
 
 ## Arbeitsanweisung
-1. Lies `docs/Architecture-Guide.md` als verbindliche Referenz.
-2. Lies Scope (`In/Out`) und Akzeptanzkriterien der Story.
-3. Erstelle eine Test-Mapping-Liste:
+1. Lies immer zuerst `docs/React-Testing-Guide.md` als verbindliche Referenz.
+2. Lies danach `docs/Architecture-Guide.md` als verbindliche Referenz.
+3. Lies Scope (`In/Out`) und Akzeptanzkriterien der Story.
+4. Erstelle eine Test-Mapping-Liste:
    - Akzeptanzkriterium -> Testfall (bestehend oder neu)
-4. Pruefe vorhandene Vitest-Tests auf Abdeckung und Qualitaet.
-5. Schreibe/ergaenze fehlende Vitest-Tests fuer nicht abgedeckte Kriterien und relevante Architektur-Risiken.
-6. Fuehre Vitest aus und dokumentiere Ergebnisse.
-7. Markiere nicht erfuellte Kriterien oder Blocker eindeutig.
-8. Erzeuge ein Test-Artefakt gemaess Ausgabestruktur.
+5. Pruefe vorhandene Vitest-Tests auf Abdeckung und Qualitaet.
+6. Schreibe/ergaenze fehlende Vitest-Tests fuer nicht abgedeckte Kriterien, den Testing Guide und relevante Architektur-Risiken.
+7. Fuehre Vitest aus und dokumentiere Ergebnisse.
+8. Markiere nicht erfuellte Kriterien oder Blocker eindeutig.
+9. Erzeuge ein Test-Artefakt gemaess Ausgabestruktur.
 
 ## Sprachregeln fuer Kinder (Pflicht)
 - Verwende kurze, klare Saetze.

@@ -14,6 +14,7 @@ Setze eine bestehende Story im Code um, ohne den vereinbarten Scope zu verlassen
 - Pflicht:
   - Story-Datei (`artifact_type: story`) oder klar referenzierte einzelne Story aus dem Story-Paket
   - aktueller Projektkontext/Codebasis
+  - Testing-Guide-Referenz: `docs/React-Testing-Guide.md`
   - Architektur-Referenz: `docs/Architecture-Guide.md`
 - Optional:
   - Story-Review (`artifact_type: story_review`)
@@ -23,6 +24,11 @@ Setze eine bestehende Story im Code um, ohne den vereinbarten Scope zu verlassen
 ## Startvorgabe (Pflicht)
 1. Ermittle zu Beginn immer zuerst das aktuelle Datum und die aktuelle Uhrzeit.
 2. Verwende diesen Zeitwert konsistent fuer Datumsfelder im erzeugten Artefakt.
+
+## Testing-Guide-Referenz (Pflicht)
+- Lies immer zuerst `docs/React-Testing-Guide.md`, bevor du andere Referenzen liest.
+- Nutze den Guide als Basis fuer Teststrategie, Testaufbau und Testqualitaet.
+- Wenn eine Story-Anforderung dem Testing Guide widerspricht: Konflikt dokumentieren und als Blocker/`needs_revision` behandeln.
 
 ## Architektur-Referenz (Pflicht)
 - Lies vor jeder Implementierung zwingend `docs/Architecture-Guide.md`.
@@ -43,18 +49,20 @@ Setze eine bestehende Story im Code um, ohne den vereinbarten Scope zu verlassen
 - Aendere nur die minimal noetigen Dateien fuer die Story.
 
 ## Arbeitsanweisung
-1. Lies `docs/Architecture-Guide.md` und leite verbindliche Architektur-Constraints fuer die Story ab.
-2. Identifiziere Story-Ziel, Scope (`In/Out`) und Akzeptanzkriterien.
-3. Erstelle vor der Implementierung eine Traceability-Checkliste:
+1. Lies immer zuerst `docs/React-Testing-Guide.md` als verbindliche Referenz fuer Testing.
+2. Lies danach `docs/Architecture-Guide.md` und leite verbindliche Architektur-Constraints fuer die Story ab.
+3. Identifiziere Story-Ziel, Scope (`In/Out`) und Akzeptanzkriterien.
+4. Erstelle vor der Implementierung eine Traceability-Checkliste:
    - Akzeptanzkriterium -> geplanter Codepunkt -> geplanter Test.
-4. Implementiere die Story entlang der Checkliste in kleinen, nachvollziehbaren Schritten.
-5. Ergaenze/aktualisiere Tests passend zu den Akzeptanzkriterien.
-6. Pruefe nach Umsetzung:
+5. Implementiere die Story entlang der Checkliste in kleinen, nachvollziehbaren Schritten.
+6. Ergaenze/aktualisiere Tests passend zu den Akzeptanzkriterien und zum Testing Guide.
+7. Pruefe nach Umsetzung:
    - Alle Kriterien erfuellt?
    - Scope eingehalten?
+   - Vorgaben aus `docs/React-Testing-Guide.md` eingehalten?
    - Architekturvorgaben aus `docs/Architecture-Guide.md` eingehalten?
    - Keine regressiven Seiteneffekte erkennbar?
-7. Erzeuge ein Implementierungs-Artefakt gemaess Ausgabestruktur.
+8. Erzeuge ein Implementierungs-Artefakt gemaess Ausgabestruktur.
 
 ## Sprachregeln fuer Kinder (Pflicht)
 - Verwende kurze, klare Saetze.
