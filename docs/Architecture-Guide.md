@@ -1,6 +1,6 @@
 # Architecture-Guide
 
-Stand: 2026-03-16
+Stand: 2026-03-20
 
 ## Ziel des Dokuments
 Dieser Guide definiert die technischen Anforderungen und die Zielarchitektur fuer `nano-zoo`.
@@ -34,6 +34,21 @@ Er dient als verbindliche Entscheidungsgrundlage, damit Implementierung, Review,
 - Neue Libraries nur mit klarer Begruendung (Nutzen, Risiko, Wartbarkeit, Bundle/Build-Effekt).
 - Keine redundanten Libraries fuer bereits vorhandene Funktionen.
 - Versions- und Tooling-Entscheidungen muessen zum bestehenden Projekt-Stack passen.
+
+### 3.1) Verbindlicher Technologie-Stack (Baseline)
+- Fuer Implementierung und Testing ist folgender Stack als Standard vorausgesetzt:
+  - `react` / ReactJS `19.x`
+  - `vite` `7.3.1`
+  - `vitest` `4.x`
+  - `tailwindcss` `4.x`
+  - React Compiler in der jeweils aktuellen verfuegbaren Version (`latest`)
+- Abweichungen von dieser Baseline sind nur mit expliziter Begruendung und dokumentierter Entscheidung zulaessig.
+- Stories, Reviews und Tests muessen diese Baseline als Default-Annahme verwenden.
+
+### 3.2) Standard fuer Implementierung und Testing
+- **Implementierung:** Neue UI- und Feature-Implementierungen werden auf Basis von ReactJS 19.x und Vite 7.3.1 umgesetzt; TailwindCSS v4 ist der Standard fuer Styling.
+- **Testing:** Automatisierte Tests werden mit Vitest v4 umgesetzt; Test-Setups und Story-Tests sind auf diese Version auszurichten.
+- **Compiler-Annahme:** Optimierungen und Kompatibilitaetsentscheidungen beruecksichtigen den React Compiler (latest) als Standard.
 
 ### 4) Fehlerbehandlung und Robustheit
 - Fehlerzustaende sind explizit modelliert und fuer Nutzer verstaendlich rueckgemeldet.
