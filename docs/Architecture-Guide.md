@@ -37,7 +37,7 @@ Er dient als verbindliche Entscheidungsgrundlage, damit Implementierung, Review,
 
 ### 3.1) Verbindlicher Technologie-Stack (Baseline)
 - Fuer Implementierung und Testing ist folgender Stack als Standard vorausgesetzt:
-  - `react` / ReactJS `19.x`
+  - `react` / ReactJS `19.2.x`
   - `vite` `7.3.1`
   - `vitest` `4.x`
   - `tailwindcss` `4.x`
