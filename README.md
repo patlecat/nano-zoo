@@ -11,3 +11,5 @@ Die Anleitung fuer Kinder zu den ersten Schritten mit Cursor findest du in [docs
 Ein kindgerechtes Glossar mit Erklärungen zu Fachbegriffen findest du in [docs/glossar.md](docs/glossar.md).
 
 Die vollständige Skill-Dokumentation mit Prompts und Workflow findest du in der Datei [docs/skill-doku.md](docs/skill-doku.md).
+
+Die von den Kindern erstellten Games liegen im Ordner [Kids-Games-Hackathon2026](Kids-Games-Hackathon2026/). Ostap, Vihan und Vivan haben sehr gut und mit viel Elan daran gearbeitet.
